@@ -148,67 +148,39 @@ This is not just a tool—it’s your **virtual AI Data Analyst**.
 Data analysis is often time-consuming and technical. With **Data Analyst Agent**, you get the power of a **data analyst, BI engineer, and ML engineer** all in one **friendly AI-powered tool**. Whether you’re analyzing sales data, visualizing trends, or building predictive models—this app does it all, instantly.
 
 ---
+graph TD
 
-## 🧩 LangGraph-Style Workflow (Nodes & Edges)
-
-```mermaid
-flowchart TD
-
-%% START
-A[🚀 Start: Launch App] --> B[📂 Upload Data (CSV/Excel)]
-
-%% DATA UPLOAD
-B --> C{✅ File Uploaded?}
+A[Start: Launch App] --> B[Upload Data (CSV/Excel)]
+B --> C{File Uploaded?}
 C -->|No| B
-C -->|Yes| D[🔍 Preprocessing\nType detection, Missing values, Date parsing]
+C -->|Yes| D[Preprocessing: type detection, missing values, date parsing]
 
-%% CLEANING
-D --> E[🧹 Data Cleaning\nFilter, Fill, Drop, Transform]
+D --> E[Data Cleaning & Transformation]
+E --> F[Automated Insights & Anomaly Detection]
 
-%% INSIGHTS
-E --> F[📊 Automated Insights\nAnomaly Detection + LLM Insights]
+F --> G{User Selects Next Action}
 
-%% DECISION NODE
-F --> G{📌 User Selects Next Action}
+G -->|Conversational Q&A| H[Chat with Data]
+H --> H1[Export Chat + SQL + Results]
 
-%% CHAT
-G -->|💬 Conversational Q&A| H[🤖 Chat with Data\nNatural Language Exploration]
-H --> H1[📥 Export Chat + SQL + Results]
+G -->|SQL Analysis| I[AI SQL Generator + Visual Query Builder]
+I --> I1[Export SQL Queries + Tables]
 
-%% SQL
-G -->|🗃️ SQL Analysis| I[🔎 AI SQL Generator + Visual Query Builder]
-I --> I1[📥 Export SQL Queries + Tables]
+G -->|Visualization Studio| J[Auto Chart Suggestions + Dashboard Builder]
+J --> J1[Export Charts/Dashboards]
 
-%% VISUALIZATION
-G -->|🎨 Visualization Studio| J[📊 Auto Chart Suggestions + Dashboard Builder]
-J --> J1[📥 Export Charts/Dashboard]
+G -->|Power BI Analyst| K[KPI Metrics + DAX + Connectors]
+K --> K1[Export for Power BI]
 
-%% POWER BI
-G -->|⚡ Power BI Analyst| K[📊 KPI Metrics + DAX + Connectors]
-K --> K1[📥 Export for Power BI]
+G -->|Machine Learning Analyst| L[AutoML Model Builder + Predictions]
+L --> L1[Export Models + Predictions]
 
-%% ML
-G -->|🧠 Machine Learning Analyst| L[🤖 AutoML Model Builder + Predictions]
-L --> L1[📥 Export Models + Predictions]
-
-%% END
-H1 --> Z[🏁 End: Download Reports]
+H1 --> Z[End: Download Reports]
 I1 --> Z
 J1 --> Z
 K1 --> Z
 L1 --> Z
-```
 
----
-
-### 📌 Explanation:
-
-* **Start Node** → User opens Streamlit app.
-* **Upload Node** → User uploads CSV/Excel.
-* **Processing Node** → Automatic preprocessing & cleaning.
-* **Decision Node** → User chooses what to do next (Chat, SQL, Visualization, Power BI, ML).
-* **Branches** → Each feature leads to exports (chat logs, SQL queries, dashboards, ML models).
-* **End Node** → User downloads results & session ends.
 
 ---
 
