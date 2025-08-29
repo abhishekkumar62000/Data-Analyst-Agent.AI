@@ -5,7 +5,7 @@ import csv
 import streamlit as st
 import pandas as pd
 import openai
-import duckdba
+import duckdb
 import re
 import os
 from dotenv import load_dotenv
