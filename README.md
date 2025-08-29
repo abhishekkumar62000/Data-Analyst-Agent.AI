@@ -148,41 +148,70 @@ This is not just a tool—it’s your **virtual AI Data Analyst**.
 Data analysis is often time-consuming and technical. With **Data Analyst Agent**, you get the power of a **data analyst, BI engineer, and ML engineer** all in one **friendly AI-powered tool**. Whether you’re analyzing sales data, visualizing trends, or building predictive models—this app does it all, instantly.
 
 ---
-📊 Data Analyst Agent 🤖 — App Workflow
 
-START
- └── 🚀 Launch App
-      └── 📂 Upload Data (CSV/Excel)
-          ├── ❌ No File → Ask user to upload again
-          └── ✅ File Uploaded
-               └── 🔍 Preprocessing
-                   (Type detection, missing values, date parsing)
-                   └── 🧹 Data Cleaning & Transformation
-                       └── 📊 Automated Insights & Anomaly Detection
-                           └── 📌 Next Action? (User Decision)
-                               ├── 💬 Conversational Data Exploration
-                               │     └── 🤖 Chat with Data (Q&A, multi-turn, export chat)
-                               │           └── ✅ Download/Export Results
-                               │
-                               ├── 🗃️ SQL Analysis
-                               │     └── AI SQL Generation + Visual Query Builder
-                               │           └── ✅ Download Queries & Results
-                               │
-                               ├── 🎨 Visualization Studio
-                               │     └── Auto Chart Suggestions + Dashboard Builder
-                               │           └── ✅ Export Charts/Dashboards
-                               │
-                               ├── ⚡ Power BI Analyst
-                               │     └── DAX, Metrics, Connectors, Export
-                               │           └── ✅ Export for Power BI
-                               │
-                               └── 🧠 Machine Learning Analyst
-                                     └── AutoML Model Builder
-                                          └── Model Explainability + Predictions
-                                               └── ✅ Export Model & Reports
+## 🧩 LangGraph-Style Workflow (Nodes & Edges)
 
-🏁 END → User leaves with Reports / Insights / Models / Dashboards
+```mermaid
+flowchart TD
+
+%% START
+A[🚀 Start: Launch App] --> B[📂 Upload Data (CSV/Excel)]
+
+%% DATA UPLOAD
+B --> C{✅ File Uploaded?}
+C -->|No| B
+C -->|Yes| D[🔍 Preprocessing\nType detection, Missing values, Date parsing]
+
+%% CLEANING
+D --> E[🧹 Data Cleaning\nFilter, Fill, Drop, Transform]
+
+%% INSIGHTS
+E --> F[📊 Automated Insights\nAnomaly Detection + LLM Insights]
+
+%% DECISION NODE
+F --> G{📌 User Selects Next Action}
+
+%% CHAT
+G -->|💬 Conversational Q&A| H[🤖 Chat with Data\nNatural Language Exploration]
+H --> H1[📥 Export Chat + SQL + Results]
+
+%% SQL
+G -->|🗃️ SQL Analysis| I[🔎 AI SQL Generator + Visual Query Builder]
+I --> I1[📥 Export SQL Queries + Tables]
+
+%% VISUALIZATION
+G -->|🎨 Visualization Studio| J[📊 Auto Chart Suggestions + Dashboard Builder]
+J --> J1[📥 Export Charts/Dashboard]
+
+%% POWER BI
+G -->|⚡ Power BI Analyst| K[📊 KPI Metrics + DAX + Connectors]
+K --> K1[📥 Export for Power BI]
+
+%% ML
+G -->|🧠 Machine Learning Analyst| L[🤖 AutoML Model Builder + Predictions]
+L --> L1[📥 Export Models + Predictions]
+
+%% END
+H1 --> Z[🏁 End: Download Reports]
+I1 --> Z
+J1 --> Z
+K1 --> Z
+L1 --> Z
+```
+
 ---
+
+### 📌 Explanation:
+
+* **Start Node** → User opens Streamlit app.
+* **Upload Node** → User uploads CSV/Excel.
+* **Processing Node** → Automatic preprocessing & cleaning.
+* **Decision Node** → User chooses what to do next (Chat, SQL, Visualization, Power BI, ML).
+* **Branches** → Each feature leads to exports (chat logs, SQL queries, dashboards, ML models).
+* **End Node** → User downloads results & session ends.
+
+---
+
 
 ## 🧩 App Workflow (LangGraph + Decision Tree)
 
