@@ -148,6 +148,44 @@ This is not just a tool—it’s your **virtual AI Data Analyst**.
 Data analysis is often time-consuming and technical. With **Data Analyst Agent**, you get the power of a **data analyst, BI engineer, and ML engineer** all in one **friendly AI-powered tool**. Whether you’re analyzing sales data, visualizing trends, or building predictive models—this app does it all, instantly.
 
 ---
+📊 Data Analyst Agent 🤖 — App Workflow
+
+START
+ └── 🚀 Launch App
+      └── 📂 Upload Data (CSV/Excel)
+          ├── ❌ No File → Ask user to upload again
+          └── ✅ File Uploaded
+               └── 🔍 Preprocessing
+                   (Type detection, missing values, date parsing)
+                   └── 🧹 Data Cleaning & Transformation
+                       └── 📊 Automated Insights & Anomaly Detection
+                           └── 📌 Next Action? (User Decision)
+                               ├── 💬 Conversational Data Exploration
+                               │     └── 🤖 Chat with Data (Q&A, multi-turn, export chat)
+                               │           └── ✅ Download/Export Results
+                               │
+                               ├── 🗃️ SQL Analysis
+                               │     └── AI SQL Generation + Visual Query Builder
+                               │           └── ✅ Download Queries & Results
+                               │
+                               ├── 🎨 Visualization Studio
+                               │     └── Auto Chart Suggestions + Dashboard Builder
+                               │           └── ✅ Export Charts/Dashboards
+                               │
+                               ├── ⚡ Power BI Analyst
+                               │     └── DAX, Metrics, Connectors, Export
+                               │           └── ✅ Export for Power BI
+                               │
+                               └── 🧠 Machine Learning Analyst
+                                     └── AutoML Model Builder
+                                          └── Model Explainability + Predictions
+                                               └── ✅ Export Model & Reports
+
+🏁 END → User leaves with Reports / Insights / Models / Dashboards
+
+
+
+
 
 ## 🧩 App Workflow (LangGraph + Decision Tree)
 
