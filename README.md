@@ -1,7 +1,9 @@
 <img width="908" height="895" alt="Logo" src="https://github.com/user-attachments/assets/3b653d5a-03a4-4f30-9a4b-27010c3d8656" />
 
 <img width="1916" height="1056" alt="page" src="https://github.com/user-attachments/assets/a0e2cdd1-c6a8-495e-91b2-c5d5a707dfc4" />
+
 🔗 **Live App:** [data-analyst-ai-agent.streamlit.app](https://data-analyst-ai-agent.streamlit.app/)
+
 <img width="1916" height="1018" alt="page2" src="https://github.com/user-attachments/assets/e79cb4e2-5cd2-49fd-9e4e-1cbe0887474a" />
 
 
