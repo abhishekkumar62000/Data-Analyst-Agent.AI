@@ -1,0 +1,206 @@
+
+/*
+  Vibrant Neon Glassmorphism Dark Theme for Streamlit
+  - More color, glassy effects, and interactive animations
+*/
+
+body, .stApp {
+    background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%) !important;
+    color: #f8f8f2 !important;
+    font-family: 'Segoe UI', 'Montserrat', 'Roboto', sans-serif;
+}
+
+/* Glassy sidebar with neon border */
+[data-testid="stSidebar"] {
+    background: rgba(20, 30, 48, 0.85) !important;
+    color: #fff !important;
+    border-right: 3px solid #00fff7cc;
+    box-shadow: 2px 0 24px #00fff755;
+    backdrop-filter: blur(8px);
+}
+
+/* Neon headers and titles */
+h1, h2, h3, h4, h5, h6, .stMarkdown h1, .stMarkdown h2, .stMarkdown h3 {
+    color: #00fff7 !important;
+    text-shadow: 0 0 8px #00fff7cc, 0 2px 8px #000a;
+    letter-spacing: 1.5px;
+    font-weight: 800;
+}
+
+/* Animated neon buttons */
+
+/* Unique animated effects for all clickable buttons */
+.stButton>button {
+    background: linear-gradient(90deg, #ff00cc, #333399, #00fff7, #fffd00, #ff00cc);
+    background-size: 300% 300%;
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    font-weight: bold;
+    font-size: 1.1em;
+    box-shadow: 0 4px 24px #00fff755, 0 1.5px 8px #ff00cc55;
+    outline: 2px solid #00fff7cc;
+    outline-offset: -2px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.18s, filter 0.18s;
+    animation: neonGradient 4s ease-in-out infinite;
+}
+.stButton>button::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at 60% 40%, #fff 0%, #00fff7 40%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 2;
+    pointer-events: none;
+}
+.stButton>button:hover::before {
+    opacity: 0.18;
+    animation: buttonPulse 0.7s;
+}
+.stButton>button:hover {
+    transform: scale(1.11) rotate(-2deg);
+    box-shadow: 0 8px 32px #fffd00cc, 0 2px 16px #00fff7cc, 0 0 16px #ff00cc99;
+    filter: brightness(1.3) drop-shadow(0 0 12px #00fff7cc);
+    animation: buttonWobble 0.5s;
+}
+.stButton>button:active {
+    animation: buttonClick 0.25s;
+    filter: brightness(1.1) drop-shadow(0 0 8px #ff00cc);
+    box-shadow: 0 2px 8px #ff00cc99, 0 0 8px #00fff7cc;
+    transform: scale(0.97) rotate(1deg);
+}
+@keyframes neonGradient {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+@keyframes buttonPulse {
+    0% {opacity: 0.18;}
+    50% {opacity: 0.32;}
+    100% {opacity: 0.18;}
+}
+@keyframes buttonWobble {
+    0% {transform: scale(1.11) rotate(-2deg);}
+    25% {transform: scale(1.13) rotate(2deg);}
+    50% {transform: scale(1.09) rotate(-2deg);}
+    75% {transform: scale(1.12) rotate(1deg);}
+    100% {transform: scale(1.11) rotate(-2deg);}
+}
+@keyframes buttonClick {
+    0% {transform: scale(1.11) rotate(-2deg);}
+    50% {transform: scale(0.95) rotate(1deg);}
+    100% {transform: scale(0.97) rotate(1deg);}
+}
+
+/* Inputs and text areas with glass and neon border */
+.stTextInput>div>div>input, .stTextArea textarea {
+    background: rgba(15,32,39,0.85) !important;
+    color: #00fff7 !important;
+    border: 2px solid #ff00cc99 !important;
+    border-radius: 10px !important;
+    font-weight: 600;
+    box-shadow: 0 2px 12px #00fff733;
+    backdrop-filter: blur(4px);
+}
+
+/* Dataframe and tables with glass effect */
+.stDataFrame, .stTable {
+    background: rgba(15,32,39,0.85) !important;
+    color: #fff !important;
+    border-radius: 14px;
+    box-shadow: 0 2px 24px #ff00cc33;
+    border: 1.5px solid #00fff7cc;
+    backdrop-filter: blur(6px);
+}
+
+/* Expander and cards with glass and neon */
+.stExpander, .stCard {
+    background: linear-gradient(135deg, rgba(15,32,39,0.85) 0%, rgba(51,51,153,0.7) 100%) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 2px 24px #ff00cc33;
+    border: 1.5px solid #00fff7cc;
+    backdrop-filter: blur(6px);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+.stExpander:hover, .stCard:hover {
+    box-shadow: 0 8px 48px #ff00cc99, 0 2px 24px #00fff7cc;
+    transform: scale(1.03) rotate(-1deg);
+}
+
+/* Tabs with neon accent */
+.stTabs [data-baseweb="tab"] {
+    background: rgba(15,32,39,0.85) !important;
+    color: #fffd00 !important;
+    border-radius: 10px 10px 0 0 !important;
+    font-weight: bold;
+    margin-right: 6px;
+    border-bottom: 3px solid #ff00cc99 !important;
+    box-shadow: 0 2px 8px #00fff733;
+}
+.stTabs [aria-selected="true"] {
+    background: #00fff7 !important;
+    color: #0f2027 !important;
+    box-shadow: 0 2px 16px #ff00cc44;
+}
+
+/* Custom scrollbar neon */
+::-webkit-scrollbar {
+    width: 12px;
+    background: #0f2027;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #ff00cc 0%, #00fff7 100%);
+    border-radius: 10px;
+}
+
+/* Success, warning, error, info boxes with glass and neon */
+.stAlert {
+    border-radius: 14px !important;
+    box-shadow: 0 2px 24px #fffd0033;
+    border: 1.5px solid #00fff7cc;
+    background: rgba(15,32,39,0.85) !important;
+    color: #fff !important;
+}
+
+/* Chat bubbles (for chatbot) neon glass */
+.user-bubble {
+    background: linear-gradient(90deg,#232526,#414345);
+    color: #00fff7;
+    border-radius: 14px;
+    margin-bottom: 7px;
+    box-shadow: 0 2px 16px #00fff7cc;
+    padding: 12px;
+    max-width: 80%;
+    margin-left: auto;
+    text-align: right;
+    animation: fadeInRight 0.5s;
+    border: 2px solid #ff00cc99;
+    backdrop-filter: blur(4px);
+}
+.assistant-bubble {
+    background: linear-gradient(90deg,#141e30,#243b55);
+    color: #fffd00;
+    border-radius: 14px;
+    margin-bottom: 7px;
+    box-shadow: 0 2px 16px #ff00cc99;
+    padding: 12px;
+    max-width: 80%;
+    margin-right: auto;
+    text-align: left;
+    animation: fadeInLeft 0.5s;
+    border: 2px solid #00fff7cc;
+    backdrop-filter: blur(4px);
+}
+@keyframes fadeInRight {
+    from {opacity:0;transform:translateX(40px);}
+    to {opacity:1;transform:translateX(0);}
+}
+@keyframes fadeInLeft {
+    from {opacity:0;transform:translateX(-40px);}
+    to {opacity:1;transform:translateX(0);}
+}

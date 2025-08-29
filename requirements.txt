@@ -1,0 +1,11 @@
+streamlit
+pandas
+openai
+duckdb
+python-dotenv
+plotly
+openpyxl
+joblib
+scikit-learn
+shap
+numpy
