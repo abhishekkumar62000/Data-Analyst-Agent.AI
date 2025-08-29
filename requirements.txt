@@ -2,6 +2,7 @@ streamlit
 pandas
 openai
 duckdb
+duckdba
 python-dotenv
 plotly
 openpyxl
